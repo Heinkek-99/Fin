@@ -1,0 +1,382 @@
+<style>
+.dashboard-container {
+  background-color: rgba(250, 251, 255, 1);
+  overflow: hidden;
+}
+
+.layout-wrapper {
+  gap: 20px;
+  display: flex;
+}
+
+.sidebar {
+  background-color: #fff;
+  box-shadow: 0px 9px 53px rgba(226, 236, 249, 0.5);
+  padding: 34px 24px;
+  width: 16%;
+}
+
+.main-content {
+  width: 84%;
+  margin-left: 20px;
+}
+
+.logo-wrapper {
+  display: flex;
+  gap: 9px;
+  font-size: 23px;
+  letter-spacing: 0.23px;
+}
+
+.logo-circle {
+  border-radius: 11px;
+  background-color: rgba(255, 203, 0, 1);
+  display: flex;
+  overflow: hidden;
+  font-family: Montserrat, sans-serif;
+  color: rgba(30, 40, 117, 1);
+  font-weight: 900;
+  width: 33px;
+  height: 33px;
+  padding: 3px 6px;
+}
+
+.logo-text {
+  color: #000;
+  font-family: Outfit, sans-serif;
+  font-weight: 400;
+  margin: auto 0;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  color: rgba(145, 151, 179, 1);
+  font-family: Outfit, sans-serif;
+  font-weight: 500;
+  margin-top: 35px;
+}
+
+.nav-icon {
+  width: 21px;
+  height: 21px;
+}
+
+.header {
+  border-bottom: 0.889px solid var(--Dividers-and-Borders---grey-Light, #cecece);
+  background-color: #fff;
+  padding: 16px 70px;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.avatar {
+  border-radius: 7px;
+  background-color: rgba(255, 167, 141, 1);
+  width: 32px;
+  height: 33px;
+}
+
+.welcome-text {
+  font-size: 10px;
+  color: rgba(55, 59, 92, 1);
+}
+
+.user-name {
+  font-size: 17px;
+  color: rgba(55, 59, 92, 1);
+  font-weight: 500;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 21px;
+  margin-top: 22px;
+}
+
+.stat-card {
+  border-radius: 15px;
+  border: 0.889px solid var(--Secondary-Background, #f3f4f6);
+  padding: 15px;
+}
+
+.stat-title {
+  color: var(--text-color-80-opacity, rgba(34, 34, 34, 0.9));
+  font-size: 14px;
+}
+
+.stat-value {
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.stat-date {
+  color: var(--Inactive-State-Color, rgba(73, 69, 79, 0.8));
+  font-size: 9px;
+  margin-top: 5px;
+}
+
+.payment-history {
+  margin-top: 17px;
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 15px;
+  margin-top: 18px;
+}
+
+.tab {
+  border-radius: 26.667px;
+  border: 0.889px solid #ebebee;
+  padding: 11px 23px;
+  color: var(--text-color-80-opacity, rgba(34, 34, 34, 0.9));
+}
+
+.tab-active {
+  border-color: var(--Primary-Blue, #413b89);
+}
+
+.table-container {
+  border-radius: 10.667px;
+  border: 0.889px solid #ebebee;
+  margin-top: 14px;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  padding: 16px;
+  border-bottom: 0.889px solid var(--Dividers-and-Borders---grey-Light, #cecece);
+}
+
+.table-cell {
+  color: var(--text-color-80-opacity, rgba(34, 34, 34, 0.9));
+  font-variant-numeric: lining-nums proportional-nums;
+}
+
+.status-success {
+  color: var(--success-green-100, #0ead69);
+}
+
+.status-pending {
+  color: var(--Truecaller-logo-color, #0978f2);
+}
+
+.status-rejected {
+  color: var(--Warning-Red, rgba(193, 11, 14, 0.8));
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0 16px;
+}
+
+@media (max-width: 991px) {
+  .layout-wrapper {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+  }
+  
+  .main-content {
+    width: 100%;
+    margin-left: 0;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .header {
+    padding: 16px 20px;
+  }
+}
+</style>
+
+<div class="dashboard-container">
+  <div class="layout-wrapper">
+    <aside class="sidebar">
+      <div class="logo-wrapper">
+        <div class="logo-circle">
+          <span>G</span>
+        </div>
+        <span class="logo-text">FinSAS</span>
+      </div>
+      
+      <nav>
+        <a href="#" class="nav-item">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/ed7e7a3be7a38b1b15bda566e599ffedf463c217b4ba387b277826350b59da0e?placeholderIfAbsent=true&apiKey=aec197f37e264bfd96ae354c98ebb077" alt="" class="nav-icon" />
+          <span>Dashboard</span>
+        </a>
+        
+        <a href="payment.html" class="nav-item">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a185ae4845796412a3009df6bc67dabefb36d1501dff7a428365cd73905a2e3a?placeholderIfAbsent=true&apiKey=aec197f37e264bfd96ae354c98ebb077" alt="" class="nav-icon" />
+          <span>Paiement</span>
+        </a>
+        
+        <a href="#" class="nav-item">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d61e93f5b84e9c64017714515800fdc83ab8d177d638b56cfb13771663a1eaba?placeholderIfAbsent=true&apiKey=aec197f37e264bfd96ae354c98ebb077" alt="" class="nav-icon" />
+          <span>Wallet</span>
+        </a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="header">
+        <div class="user-profile">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/003d2c19a95c48365d2de100bb9577ba0ba3d305f8ec3645bf5a9904d2b430b5?placeholderIfAbsent=true&apiKey=aec197f37e264bfd96ae354c98ebb077" alt="" class="nav-icon" />
+          <div class="avatar"></div>
+          <div>
+            <div class="welcome-text">Welcome back,</div>
+            <div class="user-name">Shaoyoung SUN</div>
+          </div>
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/51d9d4c42bdefd95700f2a521b02e3bec597de190afccb6777b1580f80f5327e?placeholderIfAbsent=true&apiKey=aec197f37e264bfd96ae354c98ebb077" alt="" class="nav-icon" />
+        </div>
+      </header>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-title">Total Earnings</div>
+          <div class="stat-value">430.00€</div>
+          <div class="stat-date">as of 01-December 2022</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-title">Pending Payments</div>
+          <div class="stat-value">100.00€</div>
+          <div class="stat-date">as of 01-December 2022</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-title">Total Spendings</div>
+          <div class="stat-value">860.00€</div>
+          <div class="stat-date">as of 01-December 2022</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-title">Withdrawal Method</div>
+          <div class="card-details">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c7a4704d443ab56f49ab9a3111bdf60f3fc5176f60fddfc03c509883f47dd15b?placeholderIfAbsent=true&apiKey=aec197f37e264bfd96ae354c98ebb077" alt="" class="nav-icon" />
+            <span>1502********4832</span>
+          </div>
+        </div>
+      </div>
+
+      <section class="payment-history">
+        <h2>Payment History</h2>
+        
+        <div class="filter-tabs">
+          <button class="tab tab-active">All</button>
+          <button class="tab">Complete</button>
+          <button class="tab">Pending</button>
+          <button class="tab">Rejected</button>
+          <button class="tab">Fraudulent</button>
+        </div>
+
+        <div class="table-container">
+          <div class="table-header">
+            <div class="table-cell">Order ID</div>
+            <div class="table-cell">Date</div>
+            <div class="table-cell">Amount</div>
+            <div class="table-cell">Total Questions</div>
+            <div class="table-cell">Status</div>
+            <div class="table-cell">Location</div>
+          </div>
+
+          <div class="table-row">
+            <div class="table-cell">#15267</div>
+            <div class="table-cell">Mar 1, 2023</div>
+            <div class="table-cell">100</div>
+            <div class="table-cell">1</div>
+            <div class="table-cell status-success">Success</div>
+            <div class="table-cell">Brazil</div>
+          </div>
+
+          <div class="table-row">
+            <div class="table-cell">#153587</div>
+            <div class="table-cell">Jan 26, 2023</div>
+            <div class="table-cell">300</div>
+            <div class="table-cell">3</div>
+            <div class="table-cell status-success">Success</div>
+            <div class="table-cell">Dschang</div>
+          </div>
+
+          <div class="table-row">
+            <div class="table-cell">#12436</div>
+            <div class="table-cell">Feb 12, 2023</div>
+            <div class="table-cell">100</div>
+            <div class="table-cell">1</div>
+            <div class="table-cell status-success">Success</div>
+            <div class="table-cell">Yamoussoukro</div>
+          </div>
+
+          <div class="table-row">
+            <div class="table-cell">#16879</div>
+            <div class="table-cell">Feb 12, 2023</div>
+            <div class="table-cell">500</div>
+            <div class="table-cell">5</div>
+            <div class="table-cell status-success">Success</div>
+            <div class="table-cell">Kigali</div>
+          </div>
+
+          <div class="table-row">
+            <div class="table-cell">#16378</div>
+            <div class="table-cell">Feb 28, 2023</div>
+            <div class="table-cell">500</div>
+            <div class="table-cell">5</div>
+            <div class="table-cell status-rejected">Rejected</div>
+            <div class="table-cell">Beijing</div>
+          </div>
+
+          <div class="table-row">
+            <div class="table-cell">#16609</div>
+            <div class="table-cell">March 13, 2023</div>
+            <div class="table-cell">100</div>
+            <div class="table-cell">1</div>
+            <div class="table-cell status-success">Success</div>
+            <div class="table-cell">Tunis</div>
+          </div>
+
+          <div class="table-row">
+            <div class="table-cell">#16907</div>
+            <div class="table-cell">March 18, 2023</div>
+            <div class="table-cell">100</div>
+            <div class="table-cell">1</div>
+            <div class="table-cell status-pending">Pending</div>
+            <div class="table-cell">Douala</div>
+          </div>
+        </div>
+
+        <div class="pagination">
+          <div>
+            <select aria-label="Items per page">
+              <option>10</option>
+              <option>20</option>
+              <option>50</option>
+            </select>
+            <span>per page</span>
+          </div>
+          
+          <div>
+            <span>1 of 1 pages</span>
+            <button aria-label="Next page" disabled>→</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
